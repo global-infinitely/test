@@ -1,16 +1,37 @@
 using UnityEngine;
+using UnityEngine.UI;
+using Firebase;
+using Firebase.Auth;
 
 public class Test : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Button loginButton;
+    FirebaseAuth auth;
+    
     void Start()
     {
-        
+        loginButton.onClick.AddListener(OnLoginButtonClicked);
+        auth = FirebaseAuth.DefaultInstance;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnLoginButtonClicked()
     {
-        
+        auth.SignInAnonymouslyAsync().ContinueWith(task =>
+        {
+            if (task.IsCanceled)
+            {
+                Debug.LogError("SignInAnonymouslyAsync was canceled.");
+                return;
+            }
+            else if (task.IsFaulted)
+            {
+                Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
+                return;
+            }
+
+            Firebase.Auth.AuthResult result = task.Result;
+            Debug.LogFormat($"User signed in successfully: {result.User.DisplayName} ({result.User.UserId})");
+        });
     }
+    
 }
