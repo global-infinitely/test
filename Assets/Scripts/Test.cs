@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using Firebase;
 using Firebase.Auth;
 using Firebase.Analytics;
+using Firebase.Crashlytics;
 
 public class Test : MonoBehaviour
 {
@@ -45,6 +46,12 @@ public class Test : MonoBehaviour
                 LogEvent("test_event", parame);
             }
             break;
+
+            case 2:
+            {
+                CrashLog("Test crash log");
+            }
+            break;
         }
     }
 
@@ -70,6 +77,7 @@ public class Test : MonoBehaviour
             
             var userId = result.User.UserId;
             FirebaseAnalytics.SetUserId(userId);
+            Crashlytics.SetUserId(userId);
             
             Debug.LogFormat($"User signed in successfully: {result.User.DisplayName} ({result.User.UserId})");
         });
@@ -82,6 +90,14 @@ public class Test : MonoBehaviour
     {
         FirebaseAnalytics.LogEvent(lavel, parameter);
         Debug.LogFormat($"Event logged: {lavel}");
+    }
+    
+    /// <summary>
+    /// クラッシュログを送信する
+    /// </summary>
+    private void CrashLog(string message)
+    {
+        Crashlytics.LogException(new System.Exception(message));
     }
     
 }
