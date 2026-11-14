@@ -7,6 +7,8 @@
     "com.google.firebase.crashlytics": "file:GooglePackages/com.google.firebase.crashlytics-13.16.0.tgz",
     "com.google.firebase.messaging": "file:GooglePackages/com.google.firebase.messaging-13.16.0.tgz",
     "com.google.firebase.remote-config": "file:GooglePackages/com.google.firebase.remote-config-13.16.0.tgz",
+    "com.unity.ide.rider": "3.0.40",
+    "com.unity.mobile.notifications": "2.4.3",
     "com.unity.ugui": "2.0.0",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.adaptiveperformance": "1.0.0",
