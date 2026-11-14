@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "982531263738",
-    "project_id": "test-c6348",
-    "storage_bucket": "test-c6348.firebasestorage.app"
+    "project_number": "796759816158",
+    "project_id": "test-6601f",
+    "storage_bucket": "test-6601f.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:982531263738:android:41bc46255688ef1c398d43",
+        "mobilesdk_app_id": "1:796759816158:android:f72829fe082579056e4f4f",
         "android_client_info": {
-          "package_name": "com.company.test"
+          "package_name": "com.global.infinitely.test"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBZCQjGN59ORuxnFYRlGzGRpY2KmdXtn3c"
+          "current_key": "AIzaSyCWCWVW4VA_6GPc96UaaACdPwvRE0L5xWU"
         }
       ],
       "services": {
